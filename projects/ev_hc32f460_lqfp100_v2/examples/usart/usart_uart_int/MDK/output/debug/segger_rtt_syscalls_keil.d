@@ -1,0 +1,11 @@
+.\output\debug\segger_rtt_syscalls_keil.o: ..\source\llib\segger\SEGGER_RTT_Syscalls_KEIL.c
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stdlib.h
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\string.h
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\rt_sys.h
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\rt_misc.h
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\debug\segger_rtt_syscalls_keil.o: ..\source\llib\segger\SEGGER_RTT.h
+.\output\debug\segger_rtt_syscalls_keil.o: ..\source\llib\segger\SEGGER_RTT_Conf.h
+.\output\debug\segger_rtt_syscalls_keil.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stdarg.h
