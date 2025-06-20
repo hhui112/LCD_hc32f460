@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "random": "c",
+        "uart.h": "c",
+        "cstdint": "c"
+    }
+}
