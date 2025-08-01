@@ -66,21 +66,17 @@ int32_t main(void)
 		TmrA_Config();		// pwm 
 		// LED_Init();
 		qs_log_init();
-		Lcd_init();
 		sys_uart_init();
-	
+		Lcd_init();
 	
 		LL_PERIPH_WP(LL_PERIPH_ALL);
 		
 		SystemCoreClockUpdate();
 		QS_LOG_INFO("PCLK1 freq = %lu Hz", CLK_GetBusClockFreq(CLK_BUS_PCLK1));
 		QS_LOG_INFO("System Clock: %lu Hz", SystemCoreClock);
-
-		// Picture_display(0, 0, 240, 240, gImage_green);
-			//	LCD_ShowPicture_DMA(0, 0, 240, 240, gImage_green);
-			//LCD_ShowPicture_DMA(0, 0, 240, 240, gImage_red);
-	
-			//TFT_clear();
+		// g_system.wifi_connect_status = 2;  // 初始化的时候配网异常
+		// TFT_clear();
+		
     for (;;) 
 	{
 
@@ -88,20 +84,8 @@ int32_t main(void)
 
 			//QS_LOG_INFO("Buzzer_on");
 			//SysTick_Delay(500);
-			  appRun();
-		/*
-		
-					QS_LOG_INFO("Buzzer_on");
-			SysTick_Delay(50);
-			Buzzer_off();
-			SysTick_Delay(1000);
-		
-		
-			Picture_display(0, 0, 240, 240, gImage_green);
-			QS_LOG_INFO("TIME = %d\n",TMR0_GetMsTicks());
-			Picture_display(0, 0, 240, 240, gImage_blue);
-			QS_LOG_INFO("TIME = %d\n",TMR0_GetMsTicks());
-		*/
+			appRun();
+
     }
 }
 

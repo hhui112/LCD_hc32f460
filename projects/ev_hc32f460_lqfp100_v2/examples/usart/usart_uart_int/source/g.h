@@ -5,8 +5,8 @@
 #include <string.h>
 #include <stdbool.h>
 
-#define VERSION    100
-#define HANDWARE   100
+#define VERSION    101
+#define HANDWARE   101
 
 #define WHITE            0xFFFF
 #define BLACK            0x0000   

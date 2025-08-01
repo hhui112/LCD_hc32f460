@@ -53,6 +53,6 @@ uint16_t Modbus_Crc_Compute(const uint8_t *buf, uint16_t bufLen)
 
 send_state_t g_send = {0};
 buzzer_ctrl_t g_buzzer = {0};
-g_system_st g_system;
+g_system_st g_system = {.wifi_connect_status = 2};		// 初始化 配网状态为异常
 g_system_st g_last;
 

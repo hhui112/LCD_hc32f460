@@ -17,8 +17,11 @@
 
 /* 1kHz PWM, 50% duty, system clock 100MHz, PCLK1 = 100MHz */
 /* Sawtooth mode: Period = (100 000KHz / 1kHz) - 1 = 100000 */
-#define TMRA_PERIOD_VAL             (50000U - 1U)
-#define TMRA_CMP_VAL                (25000U - 1U)
+//#define TMRA_PERIOD_VAL             (50000U - 1U)
+//#define TMRA_CMP_VAL                (25000U - 1U)
+
+#define TMRA_PERIOD_VAL   (25000U - 1U)  
+#define TMRA_CMP_VAL      (12500U - 1U) 
 
 
 void TmrA_Config(void)
