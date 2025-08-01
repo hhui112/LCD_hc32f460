@@ -13,7 +13,7 @@ I (../../../../../../drivers/cmsis/Include/cmsis_compiler.h)(0x67653D0C)
 I (../../../../../../drivers/cmsis/Include/cmsis_armcc.h)(0x67653D0C)
 I (../../../../../../drivers/cmsis/Include/mpu_armv7.h)(0x67653D0D)
 I (../source/hc32f4xx_conf.h)(0x68439208)
-F (..\source\main.c)(0x685371A3)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\main.o --omf_browse .\output\debug\main.crf --depend .\output\debug\main.d)
+F (..\source\main.c)(0x688C0C3A)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\main.o --omf_browse .\output\debug\main.crf --depend .\output\debug\main.d)
 I (..\source\main.h)(0x68466F56)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h)(0x67653D0D)
@@ -49,7 +49,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (..\source\g.h)(0x68536656)
+I (..\source\g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (..\source\app_main.h)(0x6847BCD0)
@@ -82,13 +82,13 @@ I (../../../../../../drivers/cmsis/Include/cmsis_armcc.h)(0x67653D0C)
 I (../../../../../../drivers/cmsis/Include/mpu_armv7.h)(0x67653D0D)
 I (../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/system_hc32f460.h)(0x67653D0C)
 I (../source/hc32f4xx_conf.h)(0x68439208)
-F (..\source\g.c)(0x68536647)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\g.o --omf_browse .\output\debug\g.crf --depend .\output\debug\g.d)
-I (..\source\g.h)(0x68536656)
+F (..\source\g.c)(0x686B1333)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\g.o --omf_browse .\output\debug\g.crf --depend .\output\debug\g.d)
+I (..\source\g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdint.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdio.h)(0x588B8344)
-F (..\source\app_main.c)(0x6853763B)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\app_main.o --omf_browse .\output\debug\app_main.crf --depend .\output\debug\app_main.d)
+F (..\source\app_main.c)(0x688C0BFD)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\app_main.o --omf_browse .\output\debug\app_main.crf --depend .\output\debug\app_main.d)
 I (..\source\main.h)(0x68466F56)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h)(0x67653D0D)
@@ -124,7 +124,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (..\source\g.h)(0x68536656)
+I (..\source\g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (..\source\app_main.h)(0x6847BCD0)
@@ -476,7 +476,7 @@ I (..\source\llib\segger\SEGGER_RTT_Conf.h)(0x67F764D4)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
-F (..\source\sys\log\qs_log.c)(0x67F764D4)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\qs_log.o --omf_browse .\output\debug\qs_log.crf --depend .\output\debug\qs_log.d)
+F (..\source\sys\log\qs_log.c)(0x688C0C7B)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\qs_log.o --omf_browse .\output\debug\qs_log.crf --depend .\output\debug\qs_log.d)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (../source/qs_config.h)(0x6840F8A9)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdio.h)(0x588B8344)
@@ -518,7 +518,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (../source/g.h)(0x68536656)
+I (../source/g.h)(0x686B1311)
 I (..\source\config\qs_error.h)(0x67F764D4)
 I (..\source\sys\log\qs_log.h)(0x67F764D4)
 I (..\source\sys\log\qs_log_backend_rtt.h)(0x67F764D4)
@@ -564,7 +564,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (../source/g.h)(0x68536656)
+I (../source/g.h)(0x686B1311)
 I (..\source\config\qs_error.h)(0x67F764D4)
 I (..\source\llib\segger\SEGGER_RTT_Conf.h)(0x67F764D4)
 I (..\source\llib\segger\SEGGER_RTT.h)(0x67F764D4)
@@ -605,7 +605,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (../source/g.h)(0x68536656)
+I (../source/g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (..\source\sys\sysinit\sys_clock.h)(0x6846725F)
@@ -617,7 +617,7 @@ I (D:\soft\keilMDK\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (../source/main.h)(0x68466F56)
 I (..\source\config\qs_error.h)(0x67F764D4)
 I (../source/app_main.h)(0x6847BCD0)
-F (..\source\sys\sysinit\sys_tmra.c)(0x6843DBFE)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\sys_tmra.o --omf_browse .\output\debug\sys_tmra.crf --depend .\output\debug\sys_tmra.d)
+F (..\source\sys\sysinit\sys_tmra.c)(0x6859F664)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\sys_tmra.o --omf_browse .\output\debug\sys_tmra.crf --depend .\output\debug\sys_tmra.d)
 I (../source/main.h )(0x68466F56)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h)(0x67653D0D)
@@ -653,7 +653,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (../source/g.h)(0x68536656)
+I (../source/g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (..\source\sys\sysinit\sys_tmra.h)(0x6846725F)
@@ -693,7 +693,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (../source/g.h)(0x68536656)
+I (../source/g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (..\source\sys\sysinit\sys_uart.h)(0x6847C382)
@@ -735,14 +735,14 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (../source/g.h)(0x68536656)
+I (../source/g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (..\source\sys\sysinit\bsp_spi.h)(0x685111A5)
 F (..\source\config\qs_config.h)(0x6840F8B8)()
 F (..\source\config\qs_config_software.h)(0x67F764D4)()
 F (..\source\config\qs_error.h)(0x67F764D4)()
-F (..\source\lcd\GC9a01_drv.c)(0x68512239)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\gc9a01_drv.o --omf_browse .\output\debug\gc9a01_drv.crf --depend .\output\debug\gc9a01_drv.d)
+F (..\source\lcd\GC9a01_drv.c)(0x686B13DD)(--c99 -c --cpu Cortex-M4 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ../source -I ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include -I ../../../../../../drivers/cmsis/Include -I ../../../../../../drivers/hc32_ll_driver/inc -I ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2 -I ..\source\config -I ..\source\llib\segger -I ..\source\sys\log -I ..\source\sys\sysinit -I ..\source\lcd-I.\RTE\_usart_uart_int_Debug-ID:\soft\keilMDK\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-ID:\soft\keilMDK\ARM\CMSIS\Include-D__UVISION_VERSION="524" -D__DEBUG -DHC32F460 -DUSE_DDL_DRIVER-o .\output\debug\gc9a01_drv.o --omf_browse .\output\debug\gc9a01_drv.crf --depend .\output\debug\gc9a01_drv.d)
 I (../source/main.h)(0x68466F56)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h)(0x67653D0D)
@@ -778,7 +778,7 @@ I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_b
 I (../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h)(0x676B8BE0)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h)(0x67653D0D)
 I (../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2s.h)(0x67653D0D)
-I (../source/g.h)(0x68536656)
+I (../source/g.h)(0x686B1311)
 I (D:\soft\keilMDK\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\soft\keilMDK\ARM\ARMCC\include\stdbool.h)(0x588B8344)
 I (..\source\sys\sysinit\bsp_spi.h)(0x685111A5)
