@@ -273,6 +273,7 @@ void Buzzer_StartTicking(void)
 */
 void Buzzer_Task(void)
 {
+		
     if (!g_buzzer.active) return;
 
     // 超过 5 秒总时长，关闭蜂鸣器
@@ -289,7 +290,7 @@ void Buzzer_Task(void)
         // 当前为响铃状态，是否到达关闭时间
         if (g_system.runtimer - g_buzzer.toggle_time >= BUZZER_TOGGLE_TIME) {
             Buzzer_off();
-			QS_LOG_INFO("Buzzer off\n");
+			//  QS_LOG_INFO("Buzzer off\n");
             g_buzzer.buzzer_on = false;
             g_buzzer.toggle_time = g_system.runtimer;
         }
@@ -297,7 +298,7 @@ void Buzzer_Task(void)
         // 当前为关闭状态，是否到达开启时间
         if (g_system.runtimer - g_buzzer.toggle_time >= BUZZER_INTERVAL_TIME) {
             Buzzer_on();
-			QS_LOG_INFO("Buzzer on\n");
+			//  QS_LOG_INFO("Buzzer on\n");
             g_buzzer.buzzer_on = true;
             g_buzzer.toggle_time = g_system.runtimer;
         }
@@ -307,10 +308,13 @@ void Buzzer_Task(void)
 
 void show_picture(void)
 {
+	
+		static uint8_t abnormal_cnt;  // 异常计数
     // 1. 配网状态界面
     if (g_system.wifi_connect_status == 2) {
-		update_background(BG_RED);
-        LCD_ShowChinese(56, 104, "配网异常", WHITE, BLACK, 32, 0);
+				update_background(BG_RED);
+        LCD_ShowChinese(40, 100, "配网异常", WHITE, BLACK, 40, 0);
+				abnormal_cnt = 0;
         return;
     }
 
@@ -321,30 +325,30 @@ void show_picture(void)
         uint8_t score = g_system.sleep_score;
         if (score < 10) {
 			update_background(BG_RED);
-            LCD_ShowIntNum(96, 90, 0, 1, WHITE, BLACK, 32);
-            LCD_ShowChinese(112, 90, "分", WHITE, BLACK, 32, 0);
-            LCD_ShowChinese(72, 129, "睡眠较差", WHITE, BLACK, 24, 0);
+            LCD_ShowIntNum(100, 84, score, 1, WHITE, BLACK, 40);
+            LCD_ShowChinese(120, 92, "分", WHITE, BLACK, 32, 0);
+            LCD_ShowChinese(72, 132, "睡眠较差", WHITE, BLACK, 24, 0);
         } else if (score < 70) {
 			update_background(BG_RED);
-            LCD_ShowIntNum(90, 90, score, 2, WHITE, BLACK, 32);
-            LCD_ShowChinese(124, 90, "分", WHITE, BLACK, 32, 0);
-            LCD_ShowChinese(72, 129, "睡眠较差", WHITE, BLACK, 24, 0);
+            LCD_ShowIntNum(88, 88, score, 2, WHITE, BLACK, 40);
+            LCD_ShowChinese(128, 92, "分", WHITE, BLACK, 32, 0);
+            LCD_ShowChinese(72, 132, "睡眠较差", WHITE, BLACK, 24, 0);
         } else if (score < 85) {
 			update_background(BG_YELLOW);
-            LCD_ShowIntNum(90, 90, score, 2, WHITE, BLACK, 32);
-            LCD_ShowChinese(124, 90, "分", WHITE, BLACK, 32, 0);
-            LCD_ShowChinese(72, 129, "睡眠良好", WHITE, BLACK, 24, 0);
+            LCD_ShowIntNum(88, 88, score, 2, WHITE, BLACK, 40);
+            LCD_ShowChinese(128, 92, "分", WHITE, BLACK, 32, 0);
+            LCD_ShowChinese(72, 132, "睡眠良好", WHITE, BLACK, 24, 0);
         } else if (score < 100) {
 			update_background(BG_GREEN);
-            LCD_ShowIntNum(90, 90, score, 3, WHITE, BLACK, 32);
-            LCD_ShowChinese(124, 90, "分", WHITE, BLACK, 32, 0);
-            LCD_ShowChinese(72, 129, "睡眠优秀", WHITE, BLACK, 24, 0);
+            LCD_ShowIntNum(88, 88, score, 2, WHITE, BLACK, 40);
+            LCD_ShowChinese(128, 92, "分", WHITE, BLACK, 32, 0);
+            LCD_ShowChinese(72, 132, "睡眠优秀", WHITE, BLACK, 24, 0);
         } else if(g_system.sleep_score == 100 ){
 			update_background(BG_GREEN);
-			LCD_ShowIntNum(80,90,100,3,WHITE,BLACK,32);
-			LCD_ShowChinese(128,90,"分",WHITE,BLACK,32,0);
-			LCD_ShowChinese(72,129,"睡眠优秀",WHITE,BLACK,24,0);
-		}
+						LCD_ShowIntNum(76, 88, 100, 3, WHITE, BLACK, 40);
+						LCD_ShowChinese(136, 92, "分", WHITE, BLACK, 32, 0);
+						LCD_ShowChinese(72, 132, "睡眠优秀", WHITE, BLACK, 24, 0);
+				}
         return;
     }
 
@@ -353,45 +357,59 @@ void show_picture(void)
     uint8_t br = g_system.breath_rate;
 
     if (hr > 0 && br > 0) {
-        bool hr_normal = (hr > 60 && hr < 100);
+        bool hr_normal = (hr > 50 && hr < 100);
         bool br_normal = (br > 12 && br < 25);
 				// QS_LOG_INFO("hr_normal = %d,br_normal = %d \n",hr_normal,br_normal);
         if (hr_normal && br_normal)
-			{
+				{
+					abnormal_cnt = 0;  // 清空异常报警次数
 					update_background(BG_BLACK);
 					// 正常体征显示
-					LCD_ShowChinese(48, 80, "心率", WHITE, BLACK, 32, 0);
-					LCD_ShowIntNum(130, 80, hr, 2, WHITE, BLACK, 32);
-					LCD_ShowString(164, 84, "bpm", WHITE, BLACK, 24, 0);
+					LCD_ShowChinese(32, 76, "心率", WHITE, BLACK, 32, 0);LCD_ShowString(96, 76, ":", WHITE, BLACK, 32, 0);	LCD_ShowIntNum(120, 68, hr, 2, WHITE, BLACK, 40);
+					LCD_ShowChinese(164, 86, "次", WHITE, BLACK, 16, 0);LCD_ShowString(180, 86, "/", WHITE, BLACK, 16, 0);LCD_ShowChinese(188, 86, "分", WHITE, BLACK, 16, 0);
+				
+					LCD_ShowChinese(32, 128, "呼吸", WHITE, BLACK, 32, 0);LCD_ShowString(96, 128, ":", WHITE, BLACK, 32, 0);	LCD_ShowIntNum(120, 124, br, 2, WHITE, BLACK, 40);
+					LCD_ShowChinese(164, 140, "次", WHITE, BLACK, 16, 0);LCD_ShowString(180, 140, "/", WHITE, BLACK, 16, 0);LCD_ShowChinese(188, 140, "分", WHITE, BLACK, 16, 0);
 
-					LCD_ShowChinese(16, 128, "呼吸率", WHITE, BLACK, 32, 0);
-					LCD_ShowIntNum(130, 128, br, 2, WHITE, BLACK, 32);
-					LCD_ShowString(164, 132, "bpm", WHITE, BLACK, 24, 0);
         } else {
             // 异常报警
-					Buzzer_StartTicking();
-					update_background(BG_RED);
-					if (!hr_normal && br_normal) {
-							LCD_ShowChinese(56, 104, "心率异常", WHITE, BLACK, 32, 0);
-					} else if (hr_normal && !br_normal) {
-							LCD_ShowChinese(56, 104, "呼吸异常", WHITE, BLACK, 32, 0);
-					} else {
-							LCD_ShowChinese(56, 104, "心率异常", WHITE, BLACK, 32, 0);
+					if (abnormal_cnt < 30) {
+						abnormal_cnt++;	// 连续异常30s才作为异常
+						QS_LOG_INFO("abnormal_cnt = %d >>>>> hr_normal = %d,br_normal = %d \n",abnormal_cnt,hr_normal,br_normal);
 					}
-					LCD_ShowChinese(80, 144, "请及时就医", WHITE, BLACK, 16, 0);
-        }
+					if (abnormal_cnt >= 30) {			
+						Buzzer_StartTicking();
+						update_background(BG_RED);
+						if (!hr_normal && br_normal) {
+								LCD_ShowChinese(40, 84, "心率异常", WHITE, BLACK, 40, 0);
+						} else if (hr_normal && !br_normal) {
+								LCD_ShowChinese(40, 84, "呼吸异常", WHITE, BLACK, 40, 0);
+						} else {
+								LCD_ShowChinese(40, 84, "心率异常", WHITE, BLACK, 40, 0);
+						}
+							LCD_ShowChinese(60, 132, "请及时就医", WHITE, BLACK, 24, 0);
+					} else {
+							update_background(BG_BLACK);
+							LCD_ShowChinese(32, 76, "心率", WHITE, BLACK, 32, 0);LCD_ShowString(96, 76, ":", WHITE, BLACK, 32, 0);	LCD_ShowIntNum(120, 68, hr, 2, WHITE, BLACK, 40);
+							LCD_ShowChinese(164, 86, "次", WHITE, BLACK, 16, 0);LCD_ShowString(180, 86, "/", WHITE, BLACK, 16, 0);LCD_ShowChinese(188, 86, "分", WHITE, BLACK, 16, 0);
+						
+							LCD_ShowChinese(32, 128, "呼吸", WHITE, BLACK, 32, 0);LCD_ShowString(96, 128, ":", WHITE, BLACK, 32, 0);	LCD_ShowIntNum(120, 124, br, 2, WHITE, BLACK, 40);
+							LCD_ShowChinese(164, 140, "次", WHITE, BLACK, 16, 0);LCD_ShowString(180, 140, "/", WHITE, BLACK, 16, 0);LCD_ShowChinese(188, 140, "分", WHITE, BLACK, 16, 0);
+					}
+				}
         return;
     }
 
     // 4. 默认提示
 		if(g_system.off_bed == 1){
 					update_background(BG_YELLOW);
-					LCD_ShowChinese(56,	104,"当前离床",WHITE,BLACK,32,0);
-
+					LCD_ShowChinese(40, 100, "当前离床", WHITE, BLACK, 40, 0);
+					abnormal_cnt = 0;
 					// Buzzer_StartTicking();
 		}else{
 					update_background(BG_BLUE);
-					LCD_ShowChinese(56,	104,"正常运行",WHITE,BLACK,32,0);
+					LCD_ShowChinese(40, 100, "正常运行", WHITE, BLACK, 40, 0);
+					abnormal_cnt = 0;
 		}
 
 }
@@ -399,7 +417,7 @@ void show_picture(void)
 void appRun(void)
 {
 	static uint32_t timer = 0;	
-	show_picture();
+	
 	comm_send();
 	
 	if(timer == 0)
@@ -407,8 +425,9 @@ void appRun(void)
 		timer = g_system.runtimer;
 	}
 	
-	if( (timer!=0) &&(g_system.runtimer-timer > 1000) )
+	if((timer!=0) &&(g_system.runtimer-timer > 1000) )		// 100ms刷新一次图片
 	{
+		show_picture();
 		timer = 0;
 	}
 	

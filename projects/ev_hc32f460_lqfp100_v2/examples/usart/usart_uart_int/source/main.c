@@ -74,16 +74,15 @@ int32_t main(void)
 		SystemCoreClockUpdate();
 		QS_LOG_INFO("PCLK1 freq = %lu Hz", CLK_GetBusClockFreq(CLK_BUS_PCLK1));
 		QS_LOG_INFO("System Clock: %lu Hz", SystemCoreClock);
+		// Picture_display(0, 0, 240, 240, gImage_green);
 		// g_system.wifi_connect_status = 2;  // 初始化的时候配网异常
 		// TFT_clear();
-		
+	
     for (;;) 
 	{
-
 			// Buzzer_on();
-
-			//QS_LOG_INFO("Buzzer_on");
-			//SysTick_Delay(500);
+			// QS_LOG_INFO("Buzzer_on");
+			// SysTick_Delay(500);
 			appRun();
 
     }

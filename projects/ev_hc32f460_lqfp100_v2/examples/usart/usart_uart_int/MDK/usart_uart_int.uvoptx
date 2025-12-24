@@ -138,7 +138,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>JL2CM3</Key>
-          <Name>-U601024228 -O78 -S8 -ZTIFSpeedSel50000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO7 -FD1FFF8000 -FC1000 -FN2 -FF0HC32F460_512K.FLM -FS00 -FL080000 -FP0($$Device:HC32F460PETB$FlashARM\HC32F460_512K.FLM) -FF1HC32F460_otp.FLM -FS13000C00 -FL13FC -FP1($$Device:HC32F460PETB$FlashARM\HC32F460_otp.FLM)</Name>
+          <Name>-U602712746 -O78 -S8 -ZTIFSpeedSel50000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO7 -FD1FFF8000 -FC1000 -FN2 -FF0HC32F460_512K.FLM -FS00 -FL080000 -FP0($$Device:HC32F460PETB$FlashARM\HC32F460_512K.FLM) -FF1HC32F460_otp.FLM -FS13000C00 -FL13FC -FP1($$Device:HC32F460PETB$FlashARM\HC32F460_otp.FLM)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -151,31 +151,22 @@
           <Name>-X"CMSIS-DAP v1" -U07000001004300664100000f4e543246 -O206 -S8 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(2BA01477) -L00(0) -TO18 -TC10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD1FFF8000 -FC1000 -FN2 -FF0HC32F460_512K.FLM -FS00 -FL080000 -FP0($$Device:HC32F460PETB$FlashARM\HC32F460_512K.FLM) -FF1HC32F460_otp.FLM -FS13000C00 -FL13FC -FP1($$Device:HC32F460PETB$FlashARM\HC32F460_otp.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
-      <Breakpoint>
-        <Bp>
-          <Number>0</Number>
-          <Type>0</Type>
-          <LineNumber>313</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>25484</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\source\app_main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\usart_uart_int\../source/app_main.c\313</Expression>
-        </Bp>
-      </Breakpoint>
+      <Breakpoint/>
+      <MemoryWindow1>
+        <Mm>
+          <WinNumber>1</WinNumber>
+          <SubType>0</SubType>
+          <ItemText>0x1807BE00</ItemText>
+          <AccSizeX>0</AccSizeX>
+        </Mm>
+      </MemoryWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -2423,7 +2414,7 @@
 
   <Group>
     <GroupName>source</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

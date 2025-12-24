@@ -42,3 +42,9 @@
 .\output\debug\gc9a01_drv.o: ..\source\lcd\GC9a01_drv.h
 .\output\debug\gc9a01_drv.o: ..\source\lcd\lcd_font.h
 .\output\debug\gc9a01_drv.o: ..\source\lcd\lcd_pic.h
+.\output\debug\gc9a01_drv.o: ..\source\sys\log\qs_log.h
+.\output\debug\gc9a01_drv.o: ../source/qs_config.h
+.\output\debug\gc9a01_drv.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\debug\gc9a01_drv.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stdlib.h
+.\output\debug\gc9a01_drv.o: D:\soft\keilMDK\ARM\ARMCC\Bin\..\include\stdarg.h
+.\output\debug\gc9a01_drv.o: ..\source\config\qs_error.h

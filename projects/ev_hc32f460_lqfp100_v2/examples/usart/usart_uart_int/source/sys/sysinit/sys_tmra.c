@@ -23,6 +23,8 @@
 #define TMRA_PERIOD_VAL   (25000U - 1U)  
 #define TMRA_CMP_VAL      (12500U - 1U) 
 
+#define TMRA6_PERIOD_VAL   (25000U - 1U)  
+#define TMRA6_CMP_VAL      (2500U - 1U) 
 
 void TmrA_Config(void)
 {
@@ -39,11 +41,11 @@ void TmrA_Config(void)
 		stcTmraInit.sw_count.u8ClockDiv = TMRA_CLK_DIV2;
     stcTmraInit.sw_count.u8CountMode = TMRA_MD_SAWTOOTH;		// ???
     stcTmraInit.sw_count.u8CountDir  = TMRA_DIR_UP;
-    stcTmraInit.u32PeriodValue = TMRA_PERIOD_VAL;
+    stcTmraInit.u32PeriodValue = TMRA6_PERIOD_VAL;
     (void)TMRA_Init(TMRA6_UNIT, &stcTmraInit);
 
     (void)TMRA_PWM_StructInit(&stcPwmInit);
-    stcPwmInit.u32CompareValue = TMRA_CMP_VAL;
+    stcPwmInit.u32CompareValue = TMRA6_CMP_VAL;
     GPIO_SetFunc(TMRA6_PWM_PORT, TMRA6_PWM_PIN, TMRA6_PWM_PIN_FUNC);
     (void)TMRA_PWM_Init(TMRA6_UNIT, TMRA6_PWM_CH, &stcPwmInit);
     TMRA_PWM_OutputCmd(TMRA6_UNIT, TMRA6_PWM_CH, ENABLE);

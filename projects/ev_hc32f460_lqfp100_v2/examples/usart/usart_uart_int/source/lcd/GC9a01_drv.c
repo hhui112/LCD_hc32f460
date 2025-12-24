@@ -1,6 +1,7 @@
 #include "main.h"
 #include "bsp_spi.h"
 #include "GC9a01_drv.h"
+#include "qs_log.h"
 
 
 
@@ -54,10 +55,9 @@ void TFT_init(void)	//GC9A01
   {
 		// SPI_RST_0;//??? 
 	  //delay_ms(100); 
-	  //SPI_RST_1; 
+	  //SPI_RST_1;
 		LCD_CS_0();
 	  delay_ms(100); 
-	  // LCD_BLK_PORT_1();
 		
 	  TFT_send_cmd(0xEF); 		
 	  TFT_send_cmd(0xEB); 		
@@ -277,7 +277,21 @@ void TFT_init(void)	//GC9A01
 	  TFT_send_cmd(0x98); 		//XXX
 	  TFT_send_data(0x3e); 
 	  TFT_send_data(0x07); 
-	  
+		
+		TFT_send_cmd(0x34);			// TE off
+		TFT_send_cmd(0x21);			
+
+		TFT_clear();
+
+		TFT_send_cmd(0x11);           // Sleep Out
+		delay_ms(120);
+	
+		TFT_send_cmd(0x29);
+		delay_ms(20);
+
+		
+
+	/*
 	  TFT_send_cmd(0x34); 	//Tearing Effect Line Off
 	  TFT_send_cmd(0x21); 	//Display Inversion ON
 	  TFT_send_cmd(0x11); 	//????
@@ -285,6 +299,7 @@ void TFT_init(void)	//GC9A01
 	  delay_ms(120); 
 	  TFT_send_cmd(0x29); 	//?????
 	  delay_ms(20);
+		*/
   }
 
 
@@ -456,6 +471,8 @@ void LCD_ShowChinese(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
 		else if(sizey==16) LCD_ShowChinese16x16(x,y,s,fc,bc,sizey,mode);
 		else if(sizey==24) LCD_ShowChinese24x24(x,y,s,fc,bc,sizey,mode);
 		else if(sizey==32) LCD_ShowChinese32x32(x,y,s,fc,bc,sizey,mode);
+		else if(sizey==40) LCD_ShowChinese40x40(x,y,s,fc,bc,sizey,mode);
+		else if(sizey==48) LCD_ShowChinese48x48(x,y,s,fc,bc,sizey,mode);
 		else return;
 		s+=2;
 		x+=sizey;
@@ -657,6 +674,101 @@ void LCD_ShowChinese32x32(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
 	}
 }
 
+void LCD_ShowChinese48x48(u16 x, u16 y, u8 *s, u16 fc, u16 bc, u8 sizey, u8 mode)
+{
+    u16 k;
+    u16 HZnum = HZnum_typFNT_GB48();
+    u16 bytes_per_row = (sizey / 8) + ((sizey % 8) ? 1 : 0); 
+    u16 x0 = x;
+
+    for (k = 0; k < HZnum; k++)
+    {
+        if ((tfont48[k].Index[0] == s[0]) && (tfont48[k].Index[1] == s[1]))
+        {
+           
+            LCD_Address_Set(x, y, x + sizey - 1, y + sizey - 1);
+
+            for (u16 row = 0; row < sizey; row++)
+            {
+                for (u16 col_byte = 0; col_byte < bytes_per_row; col_byte++)
+                {
+                    u8 byte = tfont48[k].Msk[row * bytes_per_row + col_byte];
+
+                    for (u8 bit = 0; bit < 8; bit++)
+                    {
+                        if (!mode) 
+                        {
+                            if (byte & (0x01 << bit))
+                                LCD_WR_DATA(fc);
+                            else
+                                LCD_WR_DATA(bc);
+                        }
+                        else 
+                        {
+                            if (byte & (0x01 << bit))
+                                LCD_DrawPoint(x, y, fc);
+                            x++;
+                            if ((x - x0) == sizey) 
+                            {
+                                x = x0;
+                                y++;
+                            }
+                        }
+                    }
+                }
+            }
+            break; 
+        }
+    }
+}
+
+void LCD_ShowChinese40x40(u16 x, u16 y, u8 *s, u16 fc, u16 bc, u8 sizey, u8 mode)
+{
+    u16 k;
+    u16 HZnum = HZnum_typFNT_GB40();
+    u16 bytes_per_row = (sizey / 8) + ((sizey % 8) ? 1 : 0); 
+    u16 x0 = x;
+
+    for (k = 0; k < HZnum; k++)
+    {
+        if ((tfont40[k].Index[0] == s[0]) && (tfont40[k].Index[1] == s[1]))
+        {
+           
+            LCD_Address_Set(x, y, x + sizey - 1, y + sizey - 1);
+
+            for (u16 row = 0; row < sizey; row++)
+            {
+                for (u16 col_byte = 0; col_byte < bytes_per_row; col_byte++)
+                {
+                    u8 byte = tfont40[k].Msk[row * bytes_per_row + col_byte];
+
+                    for (u8 bit = 0; bit < 8; bit++)
+                    {
+                        if (!mode) 
+                        {
+                            if (byte & (0x01 << bit))
+                                LCD_WR_DATA(fc);
+                            else
+                                LCD_WR_DATA(bc);
+                        }
+                        else 
+                        {
+                            if (byte & (0x01 << bit))
+                                LCD_DrawPoint(x, y, fc);
+                            x++;
+                            if ((x - x0) == sizey) 
+                            {
+                                x = x0;
+                                y++;
+                            }
+                        }
+                    }
+                }
+            }
+            break; 
+        }
+    }
+}
 void LCD_ShowChar(u16 x,u16 y,u8 num,u16 fc,u16 bc,u8 sizey,u8 mode)
 {
 	u8 temp,sizex,t,m=0;
@@ -668,10 +780,11 @@ void LCD_ShowChar(u16 x,u16 y,u8 num,u16 fc,u16 bc,u8 sizey,u8 mode)
 	LCD_Address_Set(x,y,x+sizex-1,y+sizey-1);  //设置光标位置 
 	for(i=0;i<TypefaceNum;i++)
 	{ 
-		if(sizey==12)temp=ascii_1206[num][i];		       //调用6x12字体
+		if(sizey==12)temp=ascii_1206[num][i];		     //调用6x12字体
 		else if(sizey==16)temp=ascii_1608[num][i];		 //调用8x16字体
 		else if(sizey==24)temp=ascii_2412[num][i];		 //调用12x24字体
 		else if(sizey==32)temp=ascii_3216[num][i];		 //调用16x32字体
+		else if(sizey==40)temp=ascii_4024[num][i];		 //调用20x40字体
 		else return;
 		for(t=0;t<8;t++)
 		{
@@ -800,7 +913,6 @@ static void LCD_GPIO_Init(void)
     //GPIO_Init(LCD_SCK_PORT, LCD_SCK_PIN, &stcGpioInit);
     //GPIO_Init(LCD_SDA_PORT, LCD_SDA_PIN, &stcGpioInit);
 		GPIO_Init(LCD_BLK_PORT, LCD_BLK_PIN, &stcGpioInit);
-		LCD_BLK_PORT_0();
 }
 
 void Lcd_init(void){
@@ -808,8 +920,8 @@ void Lcd_init(void){
 	LCD_GPIO_Init();
 	SPI_Config();
 	TFT_init();
-	TFT_clear();
 	LCD_BLK_PORT_1();
+	//LCD_DC_0();
 }
 
 void Set_BLK_PORT(uint8_t blk)
